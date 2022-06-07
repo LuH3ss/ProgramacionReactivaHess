@@ -22,25 +22,22 @@ export class AppComponent implements OnInit  {
       console.log(data);
       
     });
-    this.siExisten();
+    this.existePerso();
 
   }
 
-  existePersonaje() {
+  existePerso() {
     return new Promise((resolve, reject)=> {
-      if(this.resultados) {
-        return resolve(this.resultados) ;
+      if(this.ejemplo) {
+        return resolve(this.ejemplo.forEach((x: any)=>{
+          console.log(x);
+        }) );
         } else {
   
-        return reject({message : 'no se encontraron resultados'}) }
+        return reject({message : 'no se encontraros.ejemplo'}) }
       })
   
   }
-  siExisten(){
-    this.existePersonaje().then((x: any)=>{
-      console.log(x);
-  
-    }).catch((error)=> console.log(error))
-}
+
 
 }
